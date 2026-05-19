@@ -1,0 +1,33 @@
+{
+  "id": "c3-parent-chain",
+  "kind": "parent_chain",
+  "description": "3-version chain; corrupting the middle link's signature MUST fail verifyChain (SPEC §7 C3)",
+  "links": [
+    {
+      "body_hex": "76657273696f6e2d31",
+      "producer_priv_hex": "1111111111111111111111111111111111111111111111111111111111111111",
+      "schema_uri": "https://example.org/schemas/test",
+      "media_type": "application/octet-stream",
+      "created_at": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "body_hex": "76657273696f6e2d32",
+      "producer_priv_hex": "2222222222222222222222222222222222222222222222222222222222222222",
+      "schema_uri": "https://example.org/schemas/test",
+      "media_type": "application/octet-stream",
+      "created_at": "2026-02-01T00:00:00.000Z"
+    },
+    {
+      "body_hex": "76657273696f6e2d33",
+      "producer_priv_hex": "3333333333333333333333333333333333333333333333333333333333333333",
+      "schema_uri": "https://example.org/schemas/test",
+      "media_type": "application/octet-stream",
+      "created_at": "2026-03-01T00:00:00.000Z"
+    }
+  ],
+  "tamper_link_sig_index": 1,
+  "expected": {
+    "verify_ok": false,
+    "error_contains": "chain[1]"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "c4-canonical",
+  "kind": "canonical",
+  "description": "Canonical encoding of an unsigned manifest MUST be byte-identical across impls (SPEC §7 C4)",
+  "input": {
+    "v": "agent-cid/1",
+    "cid": "bafkreibbbbbbbb",
+    "size": 1024,
+    "media_type": "application/octet-stream",
+    "schema_uri": "https://example.org/schemas/test",
+    "producer": "did:key:z6MkExample",
+    "created_at": "2026-01-01T00:00:00.000Z",
+    "retention": {
+      "expires_at": "2030-01-01T00:00:00.000Z",
+      "stale_after": "2027-01-01T00:00:00.000Z"
+    },
+    "parent_cid": "bafkreiprevious"
+  },
+  "expected_canonical": "{\"cid\":\"bafkreibbbbbbbb\",\"created_at\":\"2026-01-01T00:00:00.000Z\",\"media_type\":\"application/octet-stream\",\"parent_cid\":\"bafkreiprevious\",\"producer\":\"did:key:z6MkExample\",\"retention\":{\"expires_at\":\"2030-01-01T00:00:00.000Z\",\"stale_after\":\"2027-01-01T00:00:00.000Z\"},\"schema_uri\":\"https://example.org/schemas/test\",\"size\":1024,\"v\":\"agent-cid/1\"}"
+}

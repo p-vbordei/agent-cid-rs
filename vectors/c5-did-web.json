@@ -1,0 +1,25 @@
+{
+  "id": "c5-did-web",
+  "kind": "did_web_roundtrip",
+  "description": "Verify a manifest whose producer is did:web by resolving against an embedded DID document (SPEC §6 v0.2)",
+  "build": {
+    "body_hex": "646964776562646f63636f6e666f726d616e6365",
+    "producer_priv_hex": "4444444444444444444444444444444444444444444444444444444444444444",
+    "schema_uri": "https://example.org/schemas/test",
+    "media_type": "application/octet-stream",
+    "created_at": "2026-04-01T00:00:00.000Z"
+  },
+  "producer_did": "did:web:example.com",
+  "did_doc": {
+    "id": "did:web:example.com",
+    "verificationMethod": [
+      {
+        "id": "did:web:example.com#key-1",
+        "type": "Ed25519VerificationKey2020",
+        "controller": "did:web:example.com",
+        "publicKeyMultibase": "z6MktwtqAzuD5F77tAMBMwNs1KybZeff61EehV9xB1ZpXQG7"
+      }
+    ]
+  },
+  "expected": { "verify_ok": true }
+}

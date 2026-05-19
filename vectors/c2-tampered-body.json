@@ -1,0 +1,17 @@
+{
+  "id": "c2-tampered-body",
+  "kind": "tampered_body",
+  "description": "Flipping a single body byte MUST cause verify to fail with cid mismatch (SPEC §7 C2)",
+  "build": {
+    "body_hex": "68656c6c6f206167656e742d636964",
+    "producer_priv_hex": "1111111111111111111111111111111111111111111111111111111111111111",
+    "schema_uri": "https://example.org/schemas/test",
+    "media_type": "application/octet-stream",
+    "created_at": "2026-01-01T00:00:00.000Z"
+  },
+  "tamper_offset": 7,
+  "expected": {
+    "verify_ok": false,
+    "error_contains": "cid mismatch"
+  }
+}
